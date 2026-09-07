@@ -57,7 +57,7 @@ class Result {
     }
 }
 
-public class Solution {
+public class Solucion {
 
     public static void main(String[] args) throws IOException {
 
