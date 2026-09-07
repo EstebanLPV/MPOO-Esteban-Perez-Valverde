@@ -21,31 +21,27 @@ class Result {
 
         for (int i = 1; i < array.length - 1; i++) {
 
-            // Revisamos si el elemento actual puede ser la cima
-            boolean isPeak = array[i] > array[i - 1] + 1
-                          && array[i] > array[i + 1];
+            boolean Punta = array[i] > array[i - 1] + 1
+                         && array[i] > array[i + 1];
 
-            if (isPeak) {
+            if (Punta) {
 
-                int left = i - 1;
-                int right = i + 1;
+                int izquierda = i - 1;
+                int derecha = i + 1;
 
-                // Buscar hasta dónde comienza la subida
-                while (left > 0 &&
-                       array[left] > array[left - 1] + 1) {
+                while (izquierda > 0 &&
+                       array[izquierda] > array[izquierda - 1] + 1) {
 
-                    left--;
+                    izquierda--;
                 }
 
-                // Buscar hasta dónde termina la bajada
-                while (right < array.length - 1 &&
-                       array[right] > array[right + 1]) {
+                while (derecha < array.length - 1 &&
+                       array[derecha] > array[derecha + 1]) {
 
-                    right++;
+                    derecha++;
                 }
 
-                // Calcular longitud del pico
-                int length = right - left + 1;
+                int length = derecha - izquierda + 1;
 
                 if (length > maxLength) {
                     maxLength = length;
@@ -56,7 +52,6 @@ class Result {
         return maxLength;
     }
 }
-
 public class Solution {
 
     public static void main(String[] args) throws IOException {
